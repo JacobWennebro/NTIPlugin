@@ -1,0 +1,9 @@
+name: NTIPlugin
+version: ${project.version}
+main: me.jacobwennebro.ntiplugin.ntiplugin.NTIPlugin
+api-version: 1.13
+authors: [JacobWennerbo, Mafrans]
+description: NTIPluginn
+commands:
+  klass:
+    description: Välj din klass

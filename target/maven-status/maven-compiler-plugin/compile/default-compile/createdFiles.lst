@@ -1,0 +1,9 @@
+me\jacobwennebro\ntiplugin\ntiplugin\events\onBlockModify.class
+me\jacobwennebro\ntiplugin\ntiplugin\Utils.class
+me\jacobwennebro\ntiplugin\ntiplugin\NTIPlugin.class
+me\jacobwennebro\ntiplugin\ntiplugin\commands\Klass.class
+me\jacobwennebro\ntiplugin\ntiplugin\events\onMove.class
+me\jacobwennebro\ntiplugin\ntiplugin\events\onJoin.class
+me\jacobwennebro\ntiplugin\ntiplugin\guis\KlassGUI.class
+me\jacobwennebro\ntiplugin\ntiplugin\ConfigurationSetup.class
+me\jacobwennebro\ntiplugin\ntiplugin\events\GUIClickEvent.class
