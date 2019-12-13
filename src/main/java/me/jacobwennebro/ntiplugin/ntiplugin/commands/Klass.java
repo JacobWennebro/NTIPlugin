@@ -20,8 +20,12 @@ public class Klass implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
-        KlassGUI.open(player);
 
+        if(player.getScoreboard().getTeams().isEmpty()) {
+            KlassGUI.open(player);
+        } else {
+            player.sendMessage("Du har redan gjort detta kommando");
+        }
         return true;
     }
 

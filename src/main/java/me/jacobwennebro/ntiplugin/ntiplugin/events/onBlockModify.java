@@ -3,6 +3,7 @@ package me.jacobwennebro.ntiplugin.ntiplugin.events;
 import me.jacobwennebro.ntiplugin.ntiplugin.NTIPlugin;
 import me.jacobwennebro.ntiplugin.ntiplugin.Utils;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -21,7 +22,7 @@ public class onBlockModify implements Listener {
     @EventHandler
     public void onBreak(BlockBreakEvent e) {
 
-        if(true) {
+        if(e.getPlayer().getScoreboard().getTeams().isEmpty()) {
             e.setCancelled(true);
             e.getPlayer().sendMessage(Utils.FormatChat("&cDu måste välja din klass för att bygga. (/klass)"));
         }
@@ -31,7 +32,7 @@ public class onBlockModify implements Listener {
     @EventHandler
     public void onPlace(BlockPlaceEvent e) {
 
-        if(true) {
+        if(e.getPlayer().getScoreboard().getTeams().isEmpty()) {
             e.setCancelled(true);
             e.getPlayer().sendMessage(Utils.FormatChat("&cDu måste välja din klass för att bygga. (/klass)"));
         }

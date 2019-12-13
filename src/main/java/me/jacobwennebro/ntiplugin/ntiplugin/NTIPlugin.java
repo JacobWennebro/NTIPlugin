@@ -1,9 +1,7 @@
 package me.jacobwennebro.ntiplugin.ntiplugin;
 
 import me.jacobwennebro.ntiplugin.ntiplugin.commands.Klass;
-import me.jacobwennebro.ntiplugin.ntiplugin.events.onBlockModify;
-import me.jacobwennebro.ntiplugin.ntiplugin.events.onJoin;
-import me.jacobwennebro.ntiplugin.ntiplugin.events.onMove;
+import me.jacobwennebro.ntiplugin.ntiplugin.events.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -21,7 +19,10 @@ public class NTIPlugin extends JavaPlugin {
         // Register Events
         new onMove(this);
         new onJoin(this);
+        new onLeave(this);
         new onBlockModify(this);
+        new GUIClickEvent(this);
+        new onChat(this);
 
     }
 

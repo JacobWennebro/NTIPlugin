@@ -5,32 +5,22 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-public class onMove implements Listener {
+public class onChat implements Listener {
 
     private NTIPlugin plugin;
 
-    public onMove(NTIPlugin plugin){
+    public onChat(NTIPlugin plugin){
         this.plugin = plugin;
 
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler
-    public void onMove(PlayerMoveEvent e) {
+    public void onChat(AsyncPlayerChatEvent e) {
         Player player = e.getPlayer();
 
-        if(player.getScoreboard().getTeams().isEmpty()) {
-
-            player.setWalkSpeed(0);
-
-            if(e.getFrom().getY() + 0.419 < e.getTo().getY()) {
-                e.setCancelled(true);
-            }
-
-        }
-
+        e.setFormat(player.getName() + ": " + e.getMessage());
     }
-
 }

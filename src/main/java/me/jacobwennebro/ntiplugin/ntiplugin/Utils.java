@@ -1,6 +1,5 @@
 package me.jacobwennebro.ntiplugin.ntiplugin;
 
-import jdk.tools.jlink.plugin.Plugin;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 

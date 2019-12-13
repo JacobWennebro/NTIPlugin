@@ -5,32 +5,23 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
-public class onMove implements Listener {
+public class onLeave implements Listener {
 
     private NTIPlugin plugin;
 
-    public onMove(NTIPlugin plugin){
+    public onLeave(NTIPlugin plugin){
         this.plugin = plugin;
 
         Bukkit.getPluginManager().registerEvents(this, plugin);
     }
 
     @EventHandler
-    public void onMove(PlayerMoveEvent e) {
+    public void onLeave(PlayerQuitEvent e) {
         Player player = e.getPlayer();
 
-        if(player.getScoreboard().getTeams().isEmpty()) {
-
-            player.setWalkSpeed(0);
-
-            if(e.getFrom().getY() + 0.419 < e.getTo().getY()) {
-                e.setCancelled(true);
-            }
-
-        }
-
+        player.getScoreboard().getTeams().clear();
     }
 
 }

@@ -4,7 +4,6 @@ import me.jacobwennebro.ntiplugin.ntiplugin.NTIPlugin;
 import me.jacobwennebro.ntiplugin.ntiplugin.Utils;
 import me.jacobwennebro.ntiplugin.ntiplugin.guis.KlassGUI;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -28,24 +27,24 @@ public class onJoin implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
 
-        if(true) {
+        Player player = e.getPlayer();
+
+        if(player.getScoreboard().getTeams().isEmpty()) {
             Configuration Config = plugin.getConfig();
-            Player player = e.getPlayer();
 
             KlassGUI.open(player);
 
             List list = Config.getList("introduction");
             String message = Utils.FormatChat(String.join("\n", list));
             player.sendMessage(Utils.FormatCustomVariables(message, player));
-
             PotionEffect Invis = new PotionEffect(PotionEffectType.INVISIBILITY, 1000000, 100, true);
 
             player.addPotionEffect(Invis);
-
-
         }
         else {
-
+            if(player.hasPotionEffect(PotionEffectType.INVISIBILITY)) {
+                player.removePotionEffect(PotionEffectType.INVISIBILITY);
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ public class KlassGUI {
 
     public static void open(Player player) {
 
-        Inventory gui = Bukkit.createInventory(player, 54, "Välj din klass.");
+        Inventory gui = Bukkit.createInventory(player, 54, ChatColor.DARK_GRAY + "Välj din klass.");
 
         ItemStack Teknik = new ItemStack(Material.PURPLE_STAINED_GLASS_PANE);
         ItemMeta Teknik_meta = Teknik.getItemMeta();
